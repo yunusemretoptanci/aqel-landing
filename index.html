@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>AqelTech</title>
+</head>
+<body>
+    <div x-data="{ navbarOpen: false }">
+        <!-- Navbar Component -->
+        <nav class="bg-white">
+            <div  class="relative bg-white w-full md:px-12 p-4  flex items-center justify-between">
+                <img src="images/logo.jpg" alt="logo" class="w-44">
+                <div class="lg:hidden">
+                    <button @click="navbarOpen = !navbarOpen" class="focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path x-show="!navbarOpen" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="navbarOpen" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Desktop Navbar -->
+                <div class="hidden lg:flex lg:items-center lg:w-auto w-full " x-show="!navbarOpen">
+                    <nav>
+                        <ul class="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
+                            <!-- desktop navbar items -->
+                            <template x-for="item in navbarData" :key="item.id" x-data="{ item.dropdownOpen: false }">
+                                <li  class="relative lg:p-4 py-3 flex px-0 block border-b-2 border-transparent cursor-pointer" @click="item.dropdownOpen = !item.dropdownOpen">
+                                    <a :href="item.href" class=" text-sm font-medium text-[#010920] hover:text-indigo-400" x-text="item.name"></a>
+                                   <template x-if="item.dropdown">
+                                    <svg fil xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" x-bind:class="{'transform rotate-180': item.dropdownOpen}" class="mt-3 ml-1">
+                                        <path d="M0.880005 0.595749L4.88001 4.6383L8.88001 0.595749" stroke="#010920" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    
+                                </template>
+                                    <!--desktop dropdownmenu -->
+                                    <template x-if="item.dropdown">
+                                        <div class="absolute  top-10 right-1.5 w-fit shadow-md" x-show="item.dropdownOpen">
+                                            <div class=" mx-auto px-4">
+                                                <div class="lg:flex lg:flex-wrap  flex-col lg:-mx-4 py-4">
+                                                    <template x-for="item in item.dropdown" :key="item.id">
+                                                        <div class="lg:w-1/4 px-4">
+                                                            <div class="lg:text-center  mb-3">
+                                                                <a :href="item.href" class=" text-sm text-[#010920] font-medium hover:text-indigo-400" x-text="item.name"></a>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </li>
+                            </template>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="hidden md:flex">
+                    <img src="images/Call.svg" alt="search" class="w-3.5">
+                    <img src="images/Vector.svg" alt="search" class="w-3.5 ml-2">
+                </div>
+                 <!-- Mobile Navbar -->
+             <div x-show="navbarOpen" @click.away="navbarOpen = false"
+             class="lg:hidden absolute top-[60px] left-0  w-full flex flex-col	">
+             
+                <ul class="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
+                       <!--  mobile navbar items -->
+                    <template x-for="item in navbarData" :key="item.id"  x-data="{ item.mobilDropdownOpen: false }">
+                        <li  class="relative lg:p-4 py-3 lg:flex px-0 block border-b-2 border-transparent cursor-pointer" @click="item.mobilDropdownOpen = !item.mobilDropdownOpen">
+                            <div class="flex">
+                                <a :href="item.href" class=" text-sm text-[#010920] font-medium hover:text-indigo-400" x-text="item.name"></a>
+                                <template x-if="item.dropdown">
+                                 <svg fil xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" x-bind:class="{'transform rotate-180': item.mobilDropdownOpen}" class="mt-3 ml-1">
+                                     <path d="M0.880005 0.595749L4.88001 4.6383L8.88001 0.595749" stroke="#010920" stroke-linecap="round" stroke-linejoin="round"/>
+                                   </svg>
+                                 
+                             </template>
+                            </div>
+                           
+                            <!-- mobile dropdownmenu -->
+                            <template x-if="item.mobilDropdownOpen && item.dropdown">
+                                <div class="w-fit" x-show="item.mobilDropdownOpen">
+                                    <div class=" mx-auto px-4">
+                                        <div class="lg:flex lg:flex-wrap  flex-col lg:-mx-4 py-4">
+                                            <template x-for="item in item.dropdown" :key="item.id">
+                                                <div class="lg:w-1/4 px-4">
+                                                    <div class="lg:text-center  mb-3">
+                                                        <a :href="item.href" class=" text-sm text-[#010920] font-medium hover:text-indigo-400" x-text="item.name"></a>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </li>
+                    </template>
+                </ul>
+         </div>
+            </div>
+     </nav>
+    </div>
+
+    
+
+    <script>
+        var navbarData =[
+            {
+                id : 1,
+                name: 'Home',
+                href: '#',
+            },
+            {
+                id : 2,
+                name: 'Services',
+                href: '#',
+                dropdown: [
+                    {
+                        id : 1,
+                        name: 'Web Development',
+                        href: '#',
+                    },
+                    {
+                        id : 2,
+                        name: 'Mobile Development',
+                        href: '#',
+                    },
+                    {
+                        id : 3,
+                        name: 'Desktop Development',
+                        href: '#',
+                    },
+                ]
+            },
+            {
+                id : 3,
+                name: 'Solutions',
+                href: '#',
+                dropdown: [
+                    {
+                        id : 1,
+                        name: 'Web',
+                        href: '#',
+                    },
+                    {
+                        id : 2,
+                        name: 'Mobile',
+                        href: '#',
+                    },
+                    {
+                        id : 3,
+                        name: 'Desktop',
+                        href: '#',
+                    },
+                ]
+            },
+            {
+                id : 4,
+                name: 'Hire Magneto Developer',
+                href: '#',
+            },
+            {
+                id : 5,
+                name: 'Magneto2',
+                href: '#',
+            },
+            {
+                id : 6,
+                name: 'Support',
+                href: '#',
+            },
+            {
+                id : 7,
+                name: 'Portfolio',
+                href: '#',
+            },
+            {
+                id : 9,
+                name: 'Career',
+                href: '#',
+            },
+        ]
+    </script>  
+</body>
+</html>
