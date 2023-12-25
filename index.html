@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <title>AqelTech</title>
 </head>
 <body>
@@ -250,6 +254,71 @@
 ,       <button class="bg-[#F26322] text-white px-8 py-2 rounded-full mt-4  ">TALK TO US</button>
     </section>
 
+   <!--  portfolio section -->
+
+   <section class="mt-8 px-4 py-14 md:px-56  " x-data="{portfolioImgs: portfolioImages}">
+    <div class="flex flex-col items-center">
+        <h2 class="text-5xl	 text-center text-black font-bold	 ">Our Portfolio</h2>
+        <p class="text-xl mt-6 md:w-8/12  text-center">We are a leading Magento development company that has completed a large number of projects till date..</p>
+    </div>
+    <div class="flex mt-16 flex-wrap justify-between">
+        <div class="w-full  flex items-center justify-center">
+            <div class="max-w-[650px]">
+              <div
+                x-data="{ activeSlide: 1, slideCount: 3 }"
+                class="overflow-hidden relative"
+              >
+                <!-- Slider -->
+                <div
+                  class="whitespace-nowrap transition-transform duration-500 ease-in-out"
+                  :style="'transform: translateX(-' + (activeSlide - 1) * 100.5 + '%)'"
+                  x-init="setInterval(() => { activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1 }, 5000)"
+                 
+                >
+                    <template x-for="image in portfolioImgs" :key="image.id">
+                        <div class="inline-block w-full h-[400px]">
+                        <img
+                            :src="image.src"
+                            class="w-full h-full object-cover"
+                        />
+                        </div>
+                    </template>
+                </div>
+      
+                <!-- Prev/Next Arrows -->
+                <div class="absolute inset-0 flex items-center justify-between px-2">
+                  <button
+                    @click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount"
+                    class="w-[30px] h-[30px] flex items-center bg-black/30 text-white p-2 rounded-full"
+                  >
+                    &#8592;
+                  </button>
+                  <button
+                    @click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1"
+                    class="w-[30px] h-[30px] flex items-center bg-black/30 text-white p-2 rounded-full"
+                  >
+                    &#8594;
+                  </button>
+                </div>
+      
+                <!-- Dots Navigation -->
+                <div
+                  class="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 p-4"
+                >
+                  <template x-for="slideIndex in slideCount" :key="slideIndex">
+                    <button
+                      @click="activeSlide = slideIndex"
+                      class="h-2 w-2 rounded-full"
+                      :class="{'bg-orange-500': activeSlide === slideIndex, 'bg-white/50': activeSlide !== slideIndex}"
+                    ></button>
+                  </template>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+</section>
+
 
     <script>
         var navbarData =[
@@ -479,6 +548,19 @@
                 id:6,
                 header:"Developers’ community",
                 text:"Our eCommerce developers are enthusiastic members of the global community of 5,000+ Shopify developers. This community is known for its passion and collaboration for building a futuristic world of online commerce."
+            },
+        ]
+  
+        var portfolioImages=[
+            {
+                id:1,
+                src:"images/ecommerce-2.jpg"
+            },{
+                id:2,
+                src:"images/portfolio2.webp"
+            },{
+                id:3,
+                src:"images/portfolio1.webp"
             },
         ]
   </script>  
