@@ -175,16 +175,30 @@
                 <img :src="mgService.src" :alt="mgService.header" class="w-30 mt-2">
                 <h3 class="text-base  font-bold mt-6" x-text="mgService.header"></h1>
                 <p class="text-base mt-3 text-center" x-text="mgService.text"></p>
-                <button class="bg-[#00A2EA] text-white px-4 py-1 rounded-full mt-3 mb-4">Read More</button>
+                <button class="bg-[#00A2EA] text-xs text-white px-5 py-1.5 rounded-full mt-3 mb-4">READ MORE</button>
             </div>
             </template>
         </div>
         <div class="flex align-center">
         <button class="bg-black text-white px-8 py-2 rounded-full mt-10 mx-auto ">Explore All</button>
         </div>
-
     </section>
+    <!-- Magento Development Solutions Section -->
 
+    <section class="mt-16 px-4 md:px-56 " x-data="{dvlpSolutions: developmentSolutions}">
+        <div >
+            <h2 class="text-xl text-center text-black font-normal ">Our Magento Development Solutions</h2>
+            <p class="text-base mt-6  text-center">We bring your eCommerce idea to reality with our end-to-end Magento eCommerce development solutions.</p>
+        </div>
+        <div class="grid md:gap-x-56 gap-y-3 align-center md:grid-cols-2">
+            <template x-for="dvlpSolution in dvlpSolutions" :key="dvlpSolution.id">
+                <div class=" p-2 rounded-[21px] flex flex-col ">
+                <h3 class="text-xl  font-bold mt-6" x-text="dvlpSolution.header"></h1>
+                <p class="text-base mt-5 " x-text="dvlpSolution.text"></p>
+                <button class="bg-[#00A2EA] w-fit text-xs text-white px-5 py-1.5 rounded-full mt-5 mb-4">READ MORE</button>
+                </template>
+        </div>
+    </section>
 
     <script>
         var navbarData =[
@@ -316,6 +330,50 @@
             },
         ]
 
+        var developmentSolutions=[
+            {
+                id:1,
+                header:"Purchase & Replenishment Solution:",
+                text:"Timely procurement of products from the supplier is a key parameter of the seller's success. The big questions are what to buy, how much to buy and when to buy."
+            },{
+                id:2,
+                header:"Mobile Point of Sale Solution:",
+                text:"Mobility is a raging trend that is making it big in every industry vertical, particularly retail and e-commerce. Enable mobile point of sale to speed up product buying experience."
+            },{
+                id:3,
+                header:"Business Analytics Solutions:",
+                text:"Retail selling has seen a big transition in recent years as multiple selling channels have become a common concept. Analyze the product selling patterns and changing customer trends to increase offerings."
+            },{
+                id:4,
+                header:"Multichannel Inventory Solutions:",
+                text:"Inventory management is perhaps one of the biggest challenges for the e-commerce industry. Those having a multi-channel business can rely on seamless inventory management."
+            },{
+                id:5,
+                header:"Customer Relationship Solutions:",
+                text:"With our Magento ongoing support, Customer relations make the mainstay of a retail business as they determine whether a business would be able to retain its shoppers or not."
+            },{
+                id:6,
+                header:"Multi-Warehouse Solutions:",
+                text:"The modern-day retail business is complex as it extends beyond a single selling location. The seller needs to have multiple points of sales to enable seamless transfer of products in a particular demographic."
+            },{
+                id:7,
+                header:"E-Commerce Solutions",
+                text:"The e-commerce space is a fiercely competitive one, with thousands of sellers making a beeline for this raging trend. Rely on technically advanced eCommerce solutions to experience seamless transactions."
+            },{
+                id:8,
+                header:"Shipping & Tracking Solution:",
+                text:"Shipping and tracking make an integral part of the e-commerce selling process. The function is concerned with enabling the reach of the right products."
+            },{
+                id:9,
+                header:"Omnichannel Retail Management Solutions:",
+                text:"Retailers have started to realize the significance of omnichannel transformation as the current market scenario requires them to reach customers through multiple touchpoints."
+            },{
+                id:10,
+                header:"Wholesale B2B Commerce Solutions:",
+                text:"E-commerce selling is no longer confined to business-to-customers enterprises by has proliferated into the business-to-business scenario too."
+            }
+
+        ]
     </script>  
 </body>
 </html>
