@@ -40,7 +40,7 @@
                                 </template>
                                     <!--desktop dropdownmenu -->
                                     <template x-if="item.dropdown">
-                                        <div class="absolute  top-10 right-1.5 w-fit shadow-md" x-show="item.dropdownOpen">
+                                        <div class="absolute z-10 bg-white top-10 right-1.5 w-fit shadow-md" x-show="item.dropdownOpen">
                                             <div class=" mx-auto px-4">
                                                 <div class="lg:flex lg:flex-wrap  flex-col lg:-mx-4 py-4">
                                                     <template x-for="item in item.dropdown" :key="item.id">
@@ -65,7 +65,7 @@
                 </div>
                  <!-- Mobile Navbar -->
              <div x-show="navbarOpen" @click.away="navbarOpen = false"
-             class="lg:hidden absolute top-[60px] left-0  w-full flex flex-col	">
+             class="lg:hidden absolute top-[60px] left-0  w-full flex flex-col bg-white	z-10">
              
                 <ul class="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
                        <!--  mobile navbar items -->
