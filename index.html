@@ -163,6 +163,29 @@
      </div>
     </section>
 
+    <!-- Magneto Development Services Array Section -->
+    <section class="mt-20 bg-[#F8F8F8] py-12 px-4 md:px-36" x-data="{mgServices: magnetoServices}">
+        <div class="flex flex-col items-center justify-center" >
+            <h1 class="text-xl text-center text-[#00A2EA] font-bold ">Wide Array of Magneto Development Services</h1>
+            <p class="text-base mt-8 md:w-8/12 text-center">We offer a wide range of Magento development services to help you build a profitable eCommerce store. Our Magento development services include:</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4  gap-10 mt-10">
+            <template x-for="mgService in mgServices" :key="mgService.id">
+                <div class="shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-2 rounded-[21px] flex flex-col items-center justify-center">
+                <img :src="mgService.src" :alt="mgService.header" class="w-30 mt-2">
+                <h3 class="text-base  font-bold mt-6" x-text="mgService.header"></h1>
+                <p class="text-base mt-3 text-center" x-text="mgService.text"></p>
+                <button class="bg-[#00A2EA] text-white px-4 py-1 rounded-full mt-3 mb-4">Read More</button>
+            </div>
+            </template>
+        </div>
+        <div class="flex align-center">
+        <button class="bg-black text-white px-8 py-2 rounded-full mt-10 mx-auto ">Explore All</button>
+        </div>
+
+    </section>
+
+
     <script>
         var navbarData =[
             {
@@ -240,6 +263,59 @@
                 href: '#',
             },
         ]
+
+        var magnetoServices=[
+            {
+                id : 1,
+                src: 'images/magneto-icon.png',
+                header: 'Magento 2 Development',
+                text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing.",
+
+            },
+            {
+                id : 2,
+                src: 'images/development-pc-icon.png',
+                header: 'Front-End Development',
+                text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing.",
+            },
+            {
+                id : 3,
+                src: 'images/shop-cart-icon.png',
+                header: 'Magento eCommerce Design',
+                text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing.",
+            },
+            {
+                id : 4,
+                src: 'images/magneto-icon.png',
+                header: 'API Module Integration',
+                text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing.",
+            },
+            {
+                id : 5,
+                src: 'images/cc-icon.png',
+                header: 'Payment Module Services',
+                href: '#',
+                text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing.",
+            },
+            {
+                id : 6,
+                src: 'images/magneto-icon.png',
+                header: 'Ongoing Magento Support',
+                text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing.",
+            },
+            {
+                id : 7,
+                src: 'images/magneto-icon.png',
+                header: 'Magento Marketplace',
+                text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing.",
+            },{
+                id : 8,
+                src: 'images/magneto-icon.png',
+                header: 'eCommerce App Development',
+                text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing.",
+            },
+        ]
+
     </script>  
 </body>
 </html>
