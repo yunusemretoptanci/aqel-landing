@@ -14,7 +14,7 @@
 <body>
     <div x-data="{ navbarOpen: false }">
         <!-- Navbar Component -->
-        <nav class="bg-white">
+        <nav class="bg-white max-w-screen-2xl mx-auto">
             <div  class="relative bg-white w-full md:px-12 p-4  flex items-center justify-between">
                 <img src="images/logo.jpg" alt="logo" class="w-44">
                 <div class="lg:hidden">
@@ -111,7 +111,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="md:flex items-center justify-between md:px-24 px-4 mt-8 items-center">
+    <section class="md:flex  items-center justify-between md:px-24 px-4 mt-8 items-center max-w-screen-2xl mx-auto">
         <div class="md:w-6/12">
             <h1 class="text-5xl font-bold mb-2 md:text-left text-center text-[#00A2EA]">We are specialised in eCommerce</h1>
             <h2 class="text-3xl font-bold mb-2 md:text-left mt-4 text-center">
@@ -129,7 +129,7 @@
     </section>
     
     <!-- Projet Managment Section -->
-    <section class="bg-[#1E1E1E] py-10 mt-24">
+    <section class="bg-[#1E1E1E] py-10 mt-24 ">
         <p class="text-center text-white text-2xl font-normal mb-8"><span class="text-[#00A2EA]">AQELTECH</span> Project Managment</p>
        <!--  project managment process -->
        <div class="flex md:gap-20 gap-10 md:flex-row flex-col justify-center items-center">
@@ -153,7 +153,7 @@
     </section>
 
     <!-- Services description Section -->
-    <section class="mt-20 flex-col md:flex-row flex items-center justify-center px-4 md:px-16 gap-10">
+    <section class="mt-20 flex-col md:flex-row flex items-center justify-center px-4 md:px-16 gap-10 max-w-screen-2xl mx-auto max-w-screen-2xl mx-auto">
      <div class="md:w-5/12 ">
         <h1 class="text-xl text-[#00A2EA] font-bold ">Create Customized eCommerce Entity With Magento Development Services</h1>
         <p class="text-base mt-8">Magento is a leading eCommerce platform, best known for its niche to build an innovative, scalable, versatile online shopping platform. 
@@ -169,7 +169,8 @@
     </section>
 
     <!-- Magneto Development Services Array Section -->
-    <section class="mt-20 bg-[#F8F8F8] py-12 px-4 md:px-36" x-data="{mgServices: magnetoServices}">
+    <section class="mt-20 bg-[#F8F8F8] py-12 px-4 md:px-36 " x-data="{mgServices: magnetoServices}">
+        <div class="max-w-screen-2xl mx-auto">
         <div class="flex flex-col items-center justify-center" >
             <h1 class="text-xl text-center text-[#00A2EA] font-bold ">Wide Array of Magneto Development Services</h1>
             <p class="text-base mt-8 md:w-8/12 text-center">We offer a wide range of Magento development services to help you build a profitable eCommerce store. Our Magento development services include:</p>
@@ -187,10 +188,11 @@
         <div class="flex items-center">
         <button class="bg-black text-white px-8 py-2 rounded-full mt-10 mx-auto ">Explore All</button>
         </div>
+    </div>
     </section>
     <!-- Magento Development Solutions Section -->
 
-    <section class="mt-16 px-4 md:px-36 lg:px-56 " x-data="{dvlpSolutions: developmentSolutions}">
+    <section class="mt-16 px-4 md:px-36 lg:px-56 max-w-screen-2xl mx-auto" x-data="{dvlpSolutions: developmentSolutions}">
         <div >
             <h2 class="text-xl text-center text-black font-normal ">Our Magento Development Solutions</h2>
             <p class="text-base mt-6  text-center">We bring your eCommerce idea to reality with our end-to-end Magento eCommerce development solutions.</p>
@@ -208,6 +210,7 @@
 
    <!--  Why Should You Choose Magento Section -->
     <section class="mt-16 px-4 py-14 md:px-24 lx:px-56 bg-[#F8F8F8] " x-data="{chsReasons: chooseReasons}">
+        <div class="max-w-screen-2xl mx-auto">
         <div class="flex flex-col items-center">
             <h2 class="text-xl text-center text-black font-normal ">Why Should You Choose Magento For eCommerce Development?</h2>
             <p class="text-base mt-6 md:w-8/12  text-center">Stay ahead in the fast-paced and competitive world of eCommerce by creating your website on a robust and scalable platform. Avail of Magento development services to meet your online retail business requirements with utmost flexibility.</p>
@@ -226,12 +229,13 @@
                 </div>
                 </template>
         </div>
+    </div>
     </section>
 
 
   <!--  Why Choose AQELTECH as Your eCommerce Partner Section -->
 
-  <section class="mt-20 flex-col md:flex-row flex items-center justify-between px-4 md:px-16 " x-data="{rsnsForPartnering: reasonsForPartnering}">
+  <section class="mt-20 flex-col md:flex-row flex items-center justify-between px-4 md:px-16 max-w-screen-2xl mx-auto" x-data="{rsnsForPartnering: reasonsForPartnering}">
      <div class="md:w-6/12 ">
         <h2 class="text-xl text-[#010920] font-bold mb-6 ">Why Choose <span class="text-[#00A2EA]">AQELTECH</span> as Your eCommerce Partner?</h2>
         <ul class="list-disc list-inside">
@@ -250,21 +254,23 @@
     </section>
 
     <!-- unleash the unlimited potential of Magento Section -->
-    <section class="bg-[#1E1E1E] px-2 s md:px-20 py-10 mt-24 flex-col md:flex-row flex items-center justify-around">
+    <section class="bg-[#1E1E1E] px-2 s md:px-20 py-10 mt-24  ">
+        <div class="max-w-screen-2xl mx-auto flex-col md:flex-row flex items-center justify-around">
         <p class="text-center text-white text-2xl font-normal" >Want to unleash the unlimited potential of <span class="text-[#F26322]">Magento</span> for your business?</p>
-,       <button class="bg-[#F26322] text-white px-8 py-2 rounded-full mt-4  ">TALK TO US</button>
+      <button class="bg-[#F26322] text-white px-8 py-2 rounded-full">TALK TO US</button>
+    </div>
     </section>
 
    <!--  portfolio section -->
 
-   <section class="mt-8 px-4 py-14 md:px-56  " x-data="{portfolioImgs: portfolioImages}">
+   <section class="mt-8 px-4 py-14 md:px-56 max-w-screen-2xl mx-auto" x-data="{portfolioImgs: portfolioImages}">
     <div class="flex flex-col items-center">
-        <h2 class="text-5xl	 text-center text-black font-bold	 ">Our Portfolio</h2>
+        <h2 class="text-5xl	 text-center text-black font-bold">Our Portfolio</h2>
         <p class="text-xl mt-6 md:w-8/12  text-center">We are a leading Magento development company that has completed a large number of projects till date..</p>
     </div>
     <div class="flex mt-16 flex-wrap justify-between">
         <div class="w-full  flex items-center justify-center">
-            <div class="max-w-[650px]">
+            <div class="max-w-[500px]">
               <div
                 x-data="{ activeSlide: 1, slideCount: 3 }"
                 class="overflow-hidden relative"
@@ -321,13 +327,13 @@
 </section>
 
 <!-- our brands section -->
-<section class="mt-8 px-4 py-14 md:px-56 bg-[#F8F8F8]" x-data="{brandsImages: ourBrandsImages}">
+<section class="mt-8 px-4 py-14 md:px-56 bg-[#F8F8F8]  mx-auto" x-data="{brandsImages: ourBrandsImages}">
     <div class="flex flex-col items-center">
         <h2 class="text-5xl	 text-center text-black font-bold">Our Brands</h2>
     </div>
     <div class="flex mt-16 flex-wrap justify-between">
         <div class="w-full  flex items-center justify-center">
-            <div class="max-w-[650px]">
+            <div class="max-w-[300px] md:max-w-[450px]">
               <div
                 x-data="{ activeSlide: 1, slideCount: 3 }"
                 class="overflow-hidden relative"
