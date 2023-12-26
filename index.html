@@ -111,15 +111,16 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="md:flex items-center justify-between md:px-24 px-4 items-center">
+    <section class="md:flex items-center justify-between md:px-24 px-4 mt-8 items-center">
         <div class="md:w-6/12">
-            <h1 class="text-4xl font-bold mb-2">We are specialised in eCommerce</h1>
-            <h2 class="text-2xl font-bold mb-2">
+            <h1 class="text-5xl font-bold mb-2 md:text-left text-center text-[#00A2EA]">We are specialised in eCommerce</h1>
+            <h2 class="text-3xl font-bold mb-2 md:text-left mt-4 text-center">
                 Our approach is simple and it works</h2>
-            <ul class="list-disc list-inside">
-                <li class="text-lg font-medium mb-2">We listen to your needs</li>
-                <li class="text-lg font-medium mb-2">We understand your business</li>
-                <li class="text-lg font-medium mb-2">We deliver the best solution</li>
+            <ul class=" list-inside mt-4">
+
+                <li class="text-lg font-medium mb-2 md:text-left  text-center">We listen to your needs</li>
+                <li class="text-lg font-medium mb-2 md:text-left  text-center">We understand your business</li>
+                <li class="text-lg font-medium mb-2 md:text-left  text-center">We deliver the best solution</li>
             </ul>
         </div>
         <div class="md:w-5/12">
@@ -213,7 +214,7 @@
         </div>
         <div class="flex  flex-wrap justify-between">
             <template x-for="chsReason in chsReasons" :key="chsReason.id">
-                <div class="flex flex-row md:flex-col items-center justify-center w-12/12 md:w-6/12 lg:w-5/12">
+                <div class="flex flex-col md:flex-row items-center justify-center mt-3 w-12/12 md:w-6/12 lg:w-5/12">
                 <img src="images/development-pc-icon.png" class="mr-2" alt="ecommerce-3">
                 <div>
                 <div class="p-2 rounded-[21px] flex flex-col ">
@@ -312,6 +313,54 @@
                       :class="{'bg-orange-500': activeSlide === slideIndex, 'bg-white/50': activeSlide !== slideIndex}"
                     ></button>
                   </template>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+</section>
+
+<!-- our brands section -->
+<section class="mt-8 px-4 py-14 md:px-56 bg-[#F8F8F8]" x-data="{brandsImages: ourBrandsImages}">
+    <div class="flex flex-col items-center">
+        <h2 class="text-5xl	 text-center text-black font-bold">Our Brands</h2>
+    </div>
+    <div class="flex mt-16 flex-wrap justify-between">
+        <div class="w-full  flex items-center justify-center">
+            <div class="max-w-[650px]">
+              <div
+                x-data="{ activeSlide: 1, slideCount: 3 }"
+                class="overflow-hidden relative"
+              >
+                <!-- Slider -->
+                <div
+                  class="whitespace-nowrap transition-transform duration-500 ease-in-out"
+                  :style="'transform: translateX(-' + (activeSlide - 1) * 100.5 + '%)'"
+                  x-init="setInterval(() => { activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1 }, 5000)"
+                >
+                    <template x-for="image in brandsImages" :key="image.id">
+                        <div class="inline-block w-full h-[200px]">
+                        <img
+                            :src="image.src"
+                            class="w-full h-full object-contain p-16"
+                        />
+                        </div>
+                    </template>
+                </div>
+                <!-- Prev/Next Arrows -->
+                <div class="absolute inset-0 flex items-center justify-between px-2">
+                  <button
+                    @click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount"
+                    class="w-[30px] h-[30px] flex items-center bg-black/30 text-white p-2 rounded-full"
+                  >
+                    &#8592;
+                  </button>
+                  <button
+                    @click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1"
+                    class="w-[30px] h-[30px] flex items-center bg-black/30 text-white p-2 rounded-full"
+                  >
+                    &#8594;
+                  </button>
                 </div>
               </div>
             </div>
@@ -563,6 +612,20 @@
                 src:"images/portfolio1.webp"
             },
         ]
+
+        var ourBrandsImages=[
+            {
+                id:1,
+                src:"images/labore.png"
+            },{
+                id:2,
+                src:"images/fresh.png"
+            },{
+                id:3,
+                src:"images/aliqua.png"
+            },
+        ]
+            
   </script>  
 </body>
 </html>
