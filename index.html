@@ -30,8 +30,8 @@
                     <nav>
                         <ul class="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
                             <!-- desktop navbar items -->
-                            <template x-for="item in navbarData" :key="item.id" x-data="{ item.dropdownOpen: false }">
-                                <li  class="relative lg:p-4 py-3 flex px-0 block border-b-2 border-transparent cursor-pointer" @click="item.dropdownOpen = !item.dropdownOpen">
+                            <template x-for="item in navbarData" :key="item.id" x-data="{item.dropdownOpen: false}">
+                                <li  class="relative lg:p-4 py-3 flex px-0  border-b-2 border-transparent cursor-pointer" @click="item.dropdownOpen = !item.dropdownOpen">
                                     <a :href="item.href" class=" text-sm font-medium text-[#010920] hover:text-indigo-400" x-text="item.name"></a>
                                    <template x-if="item.dropdown">
                                     <svg fil xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" x-bind:class="{'transform rotate-180': item.dropdownOpen}" class="mt-3 ml-1">
