@@ -4,8 +4,10 @@
   },
   "scripts": {
     "build-css": "npx tailwindcss -i ./src/styles.css -o ./public/style.css --watch",
-    "build-js":"npx esbuild src/script.js --outfile=public/script.js --bundle --watch"
+    "build-js":"npx esbuild src/script.js --outfile=public/script.js --bundle --watch",
+    "build": "npm run build-css & npm run build-js"
   },
+
   "dependencies": {
     "alpinejs": "^3.13.3",
     "esbuild": "^0.19.11"
