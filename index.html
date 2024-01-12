@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="public/style.css">
     <title>AqelTech</title>
     <meta name="description" content="This is the aqel tech landing page test.">
+   
 </head>
 <body>
     <div x-data="{ navbarOpen: false }">
@@ -120,7 +121,7 @@
             </ul>
         </div>
         <div class="md:w-5/12">
-            <img src="images//ecommerce.png">
+            <img src="images//ecommerce.png" alt="hero-section-image" width="500" height="200">
         </div>
     </section>
     
@@ -130,19 +131,19 @@
        <!--  project managment process -->
        <div class="flex md:gap-20 gap-10 md:flex-row flex-col justify-center items-center">
         <div class="flex flex-col items-center">
-            <img src="images/planning-icon.png" alt="project managment process">
+            <img src="images/planning-icon.png"  alt="planing-icon" width="26" height="50">
             <p class="text-white text-xl mt-3">Planning</p>
         </div>
         <div class="flex flex-col items-center">
-            <img src="images/develop-icon.png" alt="project managment process">
+            <img src="images/develop-icon.png" alt="desig-icon " alt="planing-icon" width="46" height="50">
             <p class="text-white text-xl mt-3">Design & Develop</p>
         </div>
         <div class="flex flex-col items-center">
-            <img src="images/deliver-icon.png" alt="project managment process">
+            <img src="images/deliver-icon.png"  alt="deliver-icon" width="42" height="50">
             <p class="text-white text-xl mt-3">Deliver</p>
         </div>
         <div class="flex flex-col items-center">
-            <img src="images/contact-us-icon.png" alt="project managment process">
+            <img src="images/contact-us-icon.png" alt="project managment process" alt="contac-icon" width="50" height="50">
             <p class="text-white text-xl mt-3">Contact Us</p>
         </div>
        </div>
@@ -160,7 +161,7 @@
      </div>
 
      <div class="md:w-7/12 ">
-        <img src="images/ecommerce-2.jpg" alt="ecommerce-2">
+        <img src="images/ecommerce-2.jpg" alt="ecommerce-image" width="800">
      </div>
     </section>
 
@@ -174,7 +175,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-4  gap-10 mt-10">
             <template x-for="mgService in mgServices" :key="mgService.id">
                 <div class="shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-2 rounded-[21px] flex flex-col items-center justify-center">
-                <img :src="mgService.src" :alt="mgService.header" class="w-30 mt-2">
+                <img :src="mgService.src" :alt="mgService.header" class="w-30 mt-2" alt="ecommerce-image" >
                 <h3 class="text-base  font-bold mt-6" x-text="mgService.header"></h1>
                 <p class="text-base mt-3 text-center" x-text="mgService.text"></p>
                 <button class="bg-[#00A2EA] text-xs text-white px-5 py-1.5 rounded-full mt-3 mb-4">READ MORE</button>
@@ -214,7 +215,7 @@
         <div class="flex  flex-wrap justify-between">
             <template x-for="chsReason in chsReasons" :key="chsReason.id">
                 <div class="flex flex-col md:flex-row items-center justify-center mt-3 w-12/12 md:w-6/12 lg:w-5/12">
-                <img src="images/development-pc-icon.png" class="mr-2" alt="ecommerce-3">
+                <img src="images/development-pc-icon.png" class="mr-2" alt="ecommerce-icons">
                 <div>
                 <div class="p-2 rounded-[21px] flex flex-col ">
                 <h3 class="text-xl  font-bold mt-6" x-text="chsReason.header"></h1>
@@ -245,7 +246,7 @@
      </div>
 
      <div class="md:w-fit ">
-        <img src="images/hands.jpg" alt="ecommerce-2">
+        <img src="images/hands.jpg" alt="hand-images" width="440">
      </div>
     </section>
 
@@ -283,6 +284,7 @@
                         <img
                             :src="image.src"
                             class="w-full h-full object-cover"
+                            alt="portfolio-images"
                         />
                         </div>
                     </template>
@@ -345,6 +347,7 @@
                         <img
                             :src="image.src"
                             class="w-full h-full object-contain p-16"
+                            alt="brands-images"
                         />
                         </div>
                     </template>
@@ -610,6 +613,7 @@
             },
         ] 
 
+  
         var portfolioImages=[
             {
                 id:1,
